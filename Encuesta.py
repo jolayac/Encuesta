@@ -6,6 +6,10 @@
 #Nombre
 #Carrera
 #Idea de proyecto
+def encuesta ():
+    User1=input ("ingrese su nombre")
+        return (User1)
 
-User1="as"
-print(User1)
+
+encuesta ()
+#
