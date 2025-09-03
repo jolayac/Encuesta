@@ -6,10 +6,19 @@
 #Nombre
 #Carrera
 #Idea de proyecto
+
+#def encuesta ():
+User1={"Nombre":"", "Carrera":"", "Idea":""}
+User2={"Nombre":"", "Carrera":"", "Idea":""}
+User3={"Nombre":"", "Carrera":"", "Idea":""}
+
+
+
 def encuesta ():
-    User1=input ("ingrese su nombre")
-        return (User1)
+    Nombre=input("Ingrese su nombre: ")
+    Carrera=input("Ingrese su carrera: ")
+    Idea=input("Ingrese su idea de proyecto: ")
+    return {"Nombre":Nombre, "Carrera":Carrera, "Idea":Idea}
 
+print(encuesta ())
 
-encuesta ()
-#
