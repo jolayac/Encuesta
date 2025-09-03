@@ -7,10 +7,17 @@
 #Carrera
 #Idea de proyecto
 
-#def encuesta ():
-User1={"Nombre":"", "Carrera":"", "Idea":""}
-User2={"Nombre":"", "Carrera":"", "Idea":""}
-User3={"Nombre":"", "Carrera":"", "Idea":""}
+#Variables:
+Resultado=[]
+Resultados=[]
+
+
+User1={""}
+User2={""}
+User3={""}
+User4={""}
+User5={""}
+User6={""}
 
 
 
@@ -20,5 +27,29 @@ def encuesta ():
     Idea=input("Ingrese su idea de proyecto: ")
     return {"Nombre":Nombre, "Carrera":Carrera, "Idea":Idea}
 
-print(encuesta ())
-
+for i in range(7):
+    if i <=5:
+        Resultado=encuesta()
+        Resultados.append(Resultado)
+        print (f"User {i+1} {Resultado}")
+        if i==0:
+            User1=Resultado
+        elif i==1:
+            User2=Resultado
+        elif i==2:
+            User3=Resultado     
+        elif i==3:
+            User4=Resultado
+        elif i==4:
+            User5=Resultado
+        elif i==5:
+            User6=Resultado
+    elif i==6:
+        print("Gracias por participar en la encuesta")
+        print("Los resultados son:")
+        for i, resultado in enumerate(Resultados, 1):
+            print(f"Usuario {i}:")
+            print(f"  Nombre: {resultado['Nombre']}")
+            print(f"  Carrera: {resultado['Carrera']}")
+            print(f"  Idea de proyecto: {resultado['Idea']}")
+            print("-" * 30)
