@@ -19,14 +19,14 @@ User4={""}
 User5={""}
 User6={""}
 
-
-
+#Funciones
 def encuesta ():
     Nombre=input("Ingrese su nombre: ")
     Carrera=input("Ingrese su carrera: ")
     Idea=input("Ingrese su idea de proyecto: ")
     return {"Nombre":Nombre, "Carrera":Carrera, "Idea":Idea}
 
+#Programa principal
 for i in range(7):
     if i <=5:
         Resultado=encuesta()
@@ -47,9 +47,11 @@ for i in range(7):
     elif i==6:
         print("Gracias por participar en la encuesta")
         print("Los resultados son:")
-        for i, resultado in enumerate(Resultados, 1):
+        for i, resultado in enumerate(Resultados, 1): #Crea listas [i,resultado] más o menos así: [(1, 'A'), (2, 'B'), (3, 'C')]. (A, B y C siendo resultados).
             print(f"Usuario {i}:")
             print(f"  Nombre: {resultado['Nombre']}")
             print(f"  Carrera: {resultado['Carrera']}")
             print(f"  Idea de proyecto: {resultado['Idea']}")
             print("-" * 30)
+    else:
+        break
