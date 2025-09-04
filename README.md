@@ -14,13 +14,16 @@ Juan Camilo Páez Guaspud.
 
 # 🔸El programa se compone de las siguientes funciones :
 
-    <img width="400" height="104" alt="image" src="https://github.com/user-attachments/assets/0834f787-7c63-4b84-a4e8-715a54d81ac2" />
+   <img width="416" height="107" alt="image" src="https://github.com/user-attachments/assets/66257aed-b57c-45f6-b69e-485c8eab19cd" />
+
 
 # 🔸Lógica del programa :
+
 -El programa ejecuta un ciclo usando for para realizar la encuesta a 6 usuarios.
 -Cada respuesta se guarda en una lista llamada Resultados.
 -Al finalizar, se imprime un resumen con los datos de cada participante.
-# Ejecución y salida :
+
+# 🔸Ejecución y salida :
 Para ejecutar el programa, simplemente corre el script en Visual Studio Code, E ingresa los datos de cada usuario uno por uno.
 <img width="523" height="124" alt="image" src="https://github.com/user-attachments/assets/e9f22e21-3f1e-4250-9317-3a8c4f1d27bf" />
 
