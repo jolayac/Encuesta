@@ -24,7 +24,7 @@ Juan Camilo Páez Guaspud.
 -Al finalizar, se imprime un resumen con los datos de cada participante.
 
 # 🔸Ejecución y salida :
-Para ejecutar el programa, simplemente corre el script en Visual Studio Code, E ingresa los datos de cada usuario uno por uno.
+Para ejecutar el programa, simplemente corre el script en Visual Studio Code, e ingresa los datos de cada usuario uno por uno.
 <img width="523" height="124" alt="image" src="https://github.com/user-attachments/assets/e9f22e21-3f1e-4250-9317-3a8c4f1d27bf" />
 
 # 🔸Notas
