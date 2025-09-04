@@ -4,9 +4,11 @@ Este programa permite recopilar información necesaria para nuestra clase a 6 us
 
 # 🔸Autores
 
-Juan Sebastián Olaya Castañeda,
-Juan Sebastián Corredor Saenz,
-Juan Camilo Páez Guaspud.
+-Juan Sebastián Olaya Castañeda
+
+-Juan Sebastián Corredor Saenz
+
+-Juan Camilo Páez Guaspud.
 
 # 🔸El programa se compone de las siguientes variables:
 
@@ -20,7 +22,9 @@ Juan Camilo Páez Guaspud.
 # 🔸Lógica del programa :
 
 -El programa ejecuta un ciclo usando for para realizar la encuesta a 6 usuarios.
+
 -Cada respuesta se guarda en una lista llamada Resultados.
+
 -Al finalizar, se imprime un resumen con los datos de cada participante.
 
 # 🔸Ejecución y salida :
