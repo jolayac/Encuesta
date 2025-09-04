@@ -1,29 +1,19 @@
 # 🔸Encuesta de idea de proyecto
+
 Este programa permite recopilar información necesaria para nuestra clase a 6 usuarios a través de una encuesta interactiva. Cada usuario debe ingresar su nombre, carrera y una idea de proyecto final. Al final, se mostrarán estos datos de forma organizada.
+
 # 🔸Autores
+
 Juan Sebastián Olaya Castañeda,
 Juan Sebastián Corredor Saenz,
 Juan Camilo Páez Guaspud.
-Descripción del Código
 
 # 🔸El programa se compone de las siguientes variables:
-Resultado = []
-Resultados = []
 
-User1 = {""}
-User2 = {""}
-User3 = {""}
-User4 = {""}
-User5 = {""}
-User6 = {""}
 <img width="112" height="178" alt="image" src="https://github.com/user-attachments/assets/287a6697-03de-4817-8720-d2c0d33f1f34" />
 
 # 🔸El programa se compone de las siguientes funciones :
-def encuesta():
-    Nombre = input("Ingrese su nombre: ")
-    Carrera = input("Ingrese su carrera: ")
-    Idea = input("Ingrese su idea de proyecto: ")
-    return {"Nombre": Nombre, "Carrera": Carrera, "Idea": Idea}
+
     <img width="400" height="104" alt="image" src="https://github.com/user-attachments/assets/0834f787-7c63-4b84-a4e8-715a54d81ac2" />
 
 # 🔸Lógica del programa :
