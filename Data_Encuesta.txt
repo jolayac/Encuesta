@@ -1,0 +1,22 @@
+Nombre, ¿Cuál es tu idea de proyecto?, ¿estas motivado/interesado en realizar un proyecto? y ¿tienes experiencia haciendo código -> cuál lenguaje de programación?
+
+Juan Camilo Páez Guaspud -- recolección y almacenamiento de datos de actividad en redes sociales -- Sí, mucho -- Java, Python y PSelnt
+
+Ferney Rodriguez -- Sí -- Juego de plataforma -- Python (poco)
+
+Kevin Possos -- Sí -- Aplicación gestionadora de negocios (inventario) -- Python 
+ 
+Wilmer porto -- Sí -- Organizador de libros (género y alfabético) -- Python (poco)
+
+David Sotelo -- Sí -- Identificador de resistencias por foto -- Python, Java (poco)
+
+Miguel Ramos -- Sí -- Juego (en espera) -- Python
+
+Santiago peralta -- No -- No idea -- Python 
+
+Jose Luis Ramirez -- Sí --  Foro sobre impresión 3D -- Python, Java, Dart, C++ 
+
+Sebastián Triana -- No -- Orgnizador de tareas -- Python
+
+Sergio Alejandro Vazquez -- No -- Organizador de rutinas de gimnasio -- C++, Python (poco)
+
