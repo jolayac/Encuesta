@@ -1,4 +1,4 @@
-Nombre, ¿Cuál es tu idea de proyecto?, ¿estas motivado/interesado en realizar un proyecto? y ¿tienes experiencia haciendo código -> cuál lenguaje de programación?
+Nombre, ¿estas motivado/interesado en realizar un proyecto?, ¿Cuál es tu idea de proyecto? y ¿tienes experiencia haciendo código -> cuál lenguaje de programación?
 
 Juan Camilo Páez Guaspud -- recolección y almacenamiento de datos de actividad en redes sociales -- Sí, mucho -- Java, Python y PSelnt
 
