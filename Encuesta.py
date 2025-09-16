@@ -78,7 +78,7 @@ class Encuesta:
                 interes = "No"
             else:
                 print("\nRespuesta inválida. Por favor, responda \"Sí\" o \"No\".\n")
-                
+
             if interes == "Sí":
                 self.interesado = True
                 break
@@ -149,7 +149,7 @@ def mostrar_todos_los_resultados(lista1, lista2):
 def main():
     for i in range(1, 11):
         sujeto = Estudiante.crear_estudiante_input()
-        encuesta = Encuesta(sujeto)
+        encuesta = Encuesta()
         encuesta.agregar_respuesta(sujeto)
         print(encuesta.resumen_respuestas)
     print(f"\n{"=" * 30}\n")
