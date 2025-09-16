@@ -16,17 +16,11 @@ lista_encuestas = []
 # Clases:
 
 class Estudiante:
-<<<<<<< Updated upstream
-    def __init__(self, nombre, edad, respuesta_proyecto=None):
-        self.nombre = nombre.capitalize()
-        self.edad = edad
-=======
     def __init__(self, nombre: str, edad: int, respuesta_proyecto=None):
         if respuesta_proyecto is None:
             respuesta_proyecto = {}
         self.nombre = nombre.strip().title()
         self.edad = int(edad)
->>>>>>> Stashed changes
         self.respuesta_proyecto = respuesta_proyecto
 
     @staticmethod
