@@ -16,42 +16,29 @@ lista_encuestas = []
 # Clases:
 
 class Estudiante:
-    def __init__(self, nombre: str, edad: int, respuesta_proyecto=None):
-        if respuesta_proyecto is None:
-            respuesta_proyecto = {}
-        self.nombre = nombre.strip().title()
-        self.edad = int(edad)
+    def __init__(self, nombre, edad, respuesta_proyecto=None):
+        self.nombre = nombre
+        self.edad = edad
         self.respuesta_proyecto = respuesta_proyecto
 
     @staticmethod
     def crear_estudiante_input():
-<<<<<<< Updated upstream
         """Crea un nuevo estudiante (objeto). Pide un nombre y una edad en la terminal"""
 
-        nombr = input("Ingrese su nombre.\n>").strip().title()
+        nombre = input("Ingrese su nombre.\n> ").strip().title()
 
         while True:    # Se va a encargar de verificar que el input de edad sea válido como edad.
             try:
-                eda = int(input("Ingrese su edad.\n>"))
-                if 0 < eda < 120:
+                edad = int(input("\nIngrese su edad.\n> "))
+                if 0 < edad < 120:
                     break
                 else:
-                    print("Por favor, ingrese una edad válida.")
+                    print("\nPor favor, ingrese una edad válida.")
             except ValueError:
-                print("La edad debe ser un número entero coherente. Intente de nuevo")
-        lista_estudiantes.append(nombr)
+                print("\nLa edad debe ser un número entero coherente. Intente de nuevo")
+        lista_estudiantes.append(nombre)
 
-=======
-        nombr = input("Ingrese su nombre.\n>")
-        while True:
-            eda_str = input("Ingrese su edad (número entero):\n> ").strip()
-            try:
-                eda = int(eda_str)
-                break
-            except ValueError:
-                print("La edad debe ser un número entero. Intente de nuevo.")
->>>>>>> Stashed changes
-        return Estudiante(nombr, eda)
+        return Estudiante(nombre, edad)
 
 
 class Encuesta:
@@ -59,7 +46,7 @@ class Encuesta:
 
         self. estudiante = estudiante
         self.preguntas = [
-            "¿Está usted interesado en hacer un proyecto con ayuda de Python? (Sí/No)",
+            "¿Está usted genuinamente interesado en hacer un proyecto con ayuda de Python? (Sí/No)",
             "¿Cuál es su idea de proyecto?",
             "¿Tiene alguna experiencia programando con Python, Java o algún otro lenguaje de programación?\nDe ser así, indique cuál. De lo contrario, escriba \"No\"."
         ]
@@ -68,6 +55,7 @@ class Encuesta:
             "Idea": "",
             "Experiencia": ""
         }
+        self.resumen_respuestas = None
 
     def agregar_respuesta(self, estudiante):
         """
@@ -76,8 +64,9 @@ class Encuesta:
         El return es un extra, por si llega a ser necesario.
         """
         # Para interés. Solo acepta si o no en sus diferentes formas.
+        print("\n")
         while True:
-            interes = input(self.preguntas[0] + "\n> ").strip().lower()
+            interes = input(f"{self.preguntas[0]}\n> ").strip().lower()
             if interes == "si":
                 interes = "Sí"
             elif interes == "sí":
@@ -85,7 +74,7 @@ class Encuesta:
             elif interes == "no":
                 interes = "No"
             else:
-                print("Respuesta inválida. Por favor, responda \"Sí\" o \"No\".\n> ")
+                print("\nRespuesta inválida. Por favor, responda \"Sí\" o \"No\".\n> ")
 
             if interes == "Sí":
                 self.interesado = True
@@ -95,10 +84,10 @@ class Encuesta:
                 break
 
         # Para idea.
-        idea = input(self.preguntas[1] + "\n>").strip().capitalize()
+        idea = input(f"\n{self.preguntas[1]}\n>").strip().capitalize()
 
         # Para experiencia.
-        experiencia = input(self.preguntas[2] + "\n>").strip().capitalize()
+        experiencia = input(f"\n{self.preguntas[2]}\n>").strip().capitalize()
 
         # Para agregarlo a respuestas.
         self.respuestas["Interés"] = interes
@@ -107,34 +96,50 @@ class Encuesta:
 
         # Para incluirlo en estudiante.
         estudiante.respuesta_proyecto = self.respuestas
-        lista_encuestas.append(self.respuestas)
+        mensaje_completo = self.resumen(estudiante)
+        self.resumen_respuestas = mensaje_completo
+        lista_encuestas.append(self.respuesta_organizada())
 
-        return self.respuestas
+    def respuesta_organizada(self):
+        """Crea un mensaje con las respuestas organizadas"""
+        separador = "-" * 30
+        respuestas_lista = []
+        for llave, valor in self.respuestas.items():
+            respuestas_lista.append(f" | {llave}: {valor}")
+        respuestas = "\n".join(respuestas_lista)
+        mensaje_completo = f"{separador}\n{respuestas}\n{separador}\n"
+
+        return mensaje_completo
 
     def resumen(self, estudiante):
         """Crea un mensaje con las respuestas organizadas"""
-        1 = "-" * 30
-        2 = f"\nMuchas gracias por llenar el formulario, {estudiante.nombre}.\nResumen:"
-        3 = "\n".join(for llave, valor in self.respuestas.items():
-                      f" | {llave}: {valor}"
+        separador = "-" * 30
+        agradecimiento = f"Muchas gracias por llenar el formulario, {estudiante.nombre}.\nResumen:"
+        respuestas_lista = []
+        for llave, valor in self.respuestas.items():
+            respuestas_lista.append(f" | {llave}: {valor}")
+        respuestas = "\n".join(respuestas_lista)
+        mensaje_completo = f"\n{separador}\n{agradecimiento}\n{respuestas}\n{separador}"
+
+        return mensaje_completo
 
 
-    @ staticmethod
-    def mostrar_todos_los_resultados():
-        for i in range(len(lista_estudiantes)):
-            print(lista_estudiantes[i], lista_encuestas[i])
-
-
+def mostrar_todos_los_resultados(lista1, lista2):
+    print("Todos los resultados de las encuestas son los siguientes:")
+    for i in range(len(lista1)):
+        print(f"\n{lista1[i]}\n{lista2[i]}")
 
 # Programa principal
 
+
 def main():
-    for i in range(1, 4):
-        sujeto=Estudiante.crear_estudiante_input()
-        encuesta1=Encuesta(sujeto)
-        encuesta1.agregar_respuesta(sujeto)
-        print(Encuesta.resumen(encuesta1, sujeto))
-    Emcuesta.
+    for i in range(1, 2):
+        sujeto = Estudiante.crear_estudiante_input()
+        encuesta = Encuesta(sujeto)
+        encuesta.agregar_respuesta(sujeto)
+        print(encuesta.resumen_respuestas)
+    print(f"\n{"=" * 30}\n")
+    mostrar_todos_los_resultados(lista_estudiantes, lista_encuestas)
 
 
 main()
