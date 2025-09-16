@@ -1,11 +1,11 @@
 Autor: Juan Sebastián Olaya Castañeda.
 
-Este programa permite recopilar información necesaria para nuestra clase a 10 usuarios a través de una encuesta interactiva. Cada usuario debe ingresar su nombre, carrera y una idea de proyecto final. Al final, se mostrarán estos datos de forma organizada.
+Este programa permite recopilar información relacionada al proyecto de 10 estudiantes a través de una encuesta. Cada usuario debe ingresar su nombre, edad, interés en hacer un proyecti, su idea de proyecto final y su experiencia programando. Al final, se mostrarán estos datos de forma organizada.
 
->Nota: Realmente me esforcé por hacer esoto lo mejor que pude. Consulté, proble, corregí, investigé y vi tutoriales para logar hacer lo que considero un buen proyecto. Aprendí más mientras hacía este archivo que en todo el curso de programación que tomé el semestre pasado.
+>Nota: Realmente me esforcé por hacer esto lo mejor que pude. Consulté, probé, corregí, investigé y vi tutoriales para logar hacer lo que considero aceptable. Aprendí más mientras hacía esto que en todo el curso de programación que tomé el semestre pasado.
 
 # Input/Output
-Un estudiante debe comenzar a llenar un formulario. Se crea su "perfil" como estudiante y después se le hacen unas preguntas relacionadas a lo que planea hacer como proyecto. Esto se repite 10 veces, con 10 estudiantes diferentes.
+Un estudiante debe comenzar a llenar un formulario. Se toman sus datos personales y después se le hacen unas preguntas relacionadas a lo que planea hacer como proyecto. Esto se repite 10 veces, con 10 estudiantes diferentes.
 
 ![alt text](<Screenshot 2025-09-16 at 00.30.39.png>)
 
@@ -15,6 +15,7 @@ Al final, se muestran todas las respuestas que los estudiantes hicieron.
 
 # Condiciones
 Las respuestas no se pueden dejar vacías y algunas preguntas solo aceptan cierto tipo de datos:
+
 -Edad (entero entre 5 y 100).
 
 ![alt text](<Screenshot 2025-09-16 at 01.00.14.png>)
@@ -32,8 +33,8 @@ Las respuestas no se pueden dejar vacías y algunas preguntas solo aceptan ciert
 Hay dos clases: Estudiante y Encuesta. Cada una tiene  diferentes variabes que se actualizan con los datos introducidos en la terminal, una funció que crea la instancia y diferentes funciones para hacer el formulario y guardar datos en variables
 
 ## Estudiante
-### Datos
-Clase que almacenan nombre, edad y los resultados de la encuesta. 
+### Atributos
+Almacenan nombre, edad y los resultados de la encuesta. 
 
 ![alt text](<Screenshot 2025-09-16 at 00.47.10.png>)
 
@@ -43,7 +44,7 @@ Puede crear una instancia con la función `.crear_estudiante_input()`.
 ![alt text](<Screenshot 2025-09-16 at 01.12.25.png>)
 
 ## Encuesta
-### Datos
+### Atributos
 Almacena las preguntas, las respuestas dadas por el estudiante y un mensaje con la respuestas organizadas.
 
 ![alt text](<Screenshot 2025-09-16 at 01.12.25-1.png>)
@@ -54,21 +55,23 @@ Con este comando se crea la instancia, se hacen las preguntas, se recibe el inpu
 >No le tomo captura porque quedaría muy extensa
 
 #### `.respuesta_organizada()`
-Crea un mensaje personalizado en el que se muestran las respuestas de manera ordenada. Se utiliza al final del programa, para mostrar todos los resutados de manera corta.
+Crea un mensaje personalizado en el que se muestran las respuestas de manera ordenada. Se utiliza al final del programa, para mostrar los resultadosde todos los estudiantes.
+
 ![alt text](<Screenshot 2025-09-16 at 01.28.42.png>)
 
 ![alt text](<Screenshot 2025-09-16 at 01.31.00.png>)
 
 #### `.resumen(estudiante)`
-Es como la anterior, con la diferencia de que esta vez se muestra un mensaje de agradecimiento al estudiante.
+Es como la anterior, con la diferencia de que esta vez se muestra un mensaje de agradecimiento al estudiante. se utiliza para mostrar un resumen de los datos de un estudiante cuando termina la encuesta.
+
 ![alt text](<Screenshot 2025-09-16 at 01.35.13.png>)
 
 >La función `mostrar_todos_los_resultados(lista1, lista2)` se encarga de imprimir alternadamente el nombre de cada estudiante y sus respuestas.
 
 # Programa principal
 Organiza las funciones para que:
-1. Cree un nuevo estudiante pidiéndole sus datos desde la terminal.
-2. Cree un objeto encuesta en base al estudiante anteriormente creado.
+1. Cree un nuevo estudiante pidiéndole su nombre y edad desde la terminal.
+2. Cree un objeto encuesta en base al estudiante anteriormente creado; pide y toma los datos relacionados al proyecto y los guarda en los atributos del objeto.
 3. Imprima un mensaje que le muestre al estudiante un resumen de las respuestas que dio.
 Esto lo hace 10 veces, creando 10 instancias de estudiantes y 10 de encuestas.
 4. Separado, muestra todos los resultados de las encuestas en la terminal.
