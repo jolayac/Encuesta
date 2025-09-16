@@ -16,12 +16,14 @@ Al final, se muestran todas las respuestas que los estudiantes hicieron.
 # Condiciones
 Las respuestas no se pueden dejar vacías y algunas preguntas solo aceptan cierto tipo de datos:
 -Edad (entero entre 5 y 100).
+
 ![alt text](<Screenshot 2025-09-16 at 01.00.14.png>)
 
 ![alt text](<Screenshot 2025-09-16 at 00.39.21.png>)
 
 
 -Interés (Sí/No).
+
 ![alt text](<Screenshot 2025-09-16 at 01.00.14-1.png>)
 
 ![alt text](<Screenshot 2025-09-16 at 00.39.52.png>)
@@ -32,15 +34,18 @@ Hay dos clases: Estudiante y Encuesta. Cada una tiene  diferentes variabes que s
 ## Estudiante
 ### Datos
 Clase que almacenan nombre, edad y los resultados de la encuesta. 
+
 ![alt text](<Screenshot 2025-09-16 at 00.47.10.png>)
 
 ### Funciones
 Puede crear una instancia con la función `.crear_estudiante_input()`.
+
 ![alt text](<Screenshot 2025-09-16 at 01.12.25.png>)
 
 ## Encuesta
 ### Datos
 Almacena las preguntas, las respuestas dadas por el estudiante y un mensaje con la respuestas organizadas.
+
 ![alt text](<Screenshot 2025-09-16 at 01.12.25-1.png>)
 
 ### Funciones
@@ -68,4 +73,4 @@ Organiza las funciones para que:
 Esto lo hace 10 veces, creando 10 instancias de estudiantes y 10 de encuestas.
 4. Separado, muestra todos los resultados de las encuestas en la terminal.
 
-![alt text](<Screenshot 2025-09-16 at 01.36.37.png>)
+![alt text](<Screenshot 2025-09-16 at 01.52.29.png>)
