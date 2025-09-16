@@ -24,13 +24,17 @@ class Estudiante:
     @staticmethod
     def crear_estudiante_input():
         """Crea un nuevo estudiante (objeto). Pide un nombre y una edad en la terminal"""
+        while True:    # Se va a encargar de verificar que el input de nombre no esté vacío.
+            nombre = input("\nIngrese su nombre.\n> ").strip().title()
+            if nombre == "":
+                print("\nEl nombre no puede estar vacío. Intente de nuevo.")
+            else:
+                break
 
-        nombre = input("Ingrese su nombre.\n> ").strip().title()
-
-        while True:    # Se va a encargar de verificar que el input de edad sea válido como edad.
+        while True:    # Se va a encargar de verificar que el input de edad sea un entero coherente.
             try:
                 edad = int(input("\nIngrese su edad.\n> "))
-                if 0 < edad < 120:
+                if 5 <= edad < 100:
                     break
                 else:
                     print("\nPor favor, ingrese una edad válida.")
@@ -42,9 +46,8 @@ class Estudiante:
 
 
 class Encuesta:
-    def __init__(self, estudiante):
+    def __init__(self):
 
-        self. estudiante = estudiante
         self.preguntas = [
             "¿Está usted genuinamente interesado en hacer un proyecto con ayuda de Python? (Sí/No)",
             "¿Cuál es su idea de proyecto?",
@@ -74,8 +77,8 @@ class Encuesta:
             elif interes == "no":
                 interes = "No"
             else:
-                print("\nRespuesta inválida. Por favor, responda \"Sí\" o \"No\".\n> ")
-
+                print("\nRespuesta inválida. Por favor, responda \"Sí\" o \"No\".\n")
+                
             if interes == "Sí":
                 self.interesado = True
                 break
@@ -84,10 +87,21 @@ class Encuesta:
                 break
 
         # Para idea.
-        idea = input(f"\n{self.preguntas[1]}\n>").strip().capitalize()
+        while True:
+            idea = input(f"\n{self.preguntas[1]}\n> ").strip().capitalize()
+            if idea == "":
+                print("Mensaje vacío. Debe ingresar una respuesta.")
+            else:
+                break
 
         # Para experiencia.
-        experiencia = input(f"\n{self.preguntas[2]}\n>").strip().capitalize()
+        while True:
+            experiencia = input(
+                f"\n{self.preguntas[2]}\n> ").strip().capitalize()
+            if experiencia == "":
+                print("Mensaje vacío. Debe ingresar una respuesta.")
+            else:
+                break
 
         # Para agregarlo a respuestas.
         self.respuestas["Interés"] = interes
@@ -107,14 +121,14 @@ class Encuesta:
         for llave, valor in self.respuestas.items():
             respuestas_lista.append(f" | {llave}: {valor}")
         respuestas = "\n".join(respuestas_lista)
-        mensaje_completo = f"{separador}\n{respuestas}\n{separador}\n"
+        mensaje_completo = f"{separador}\n{respuestas}\n{separador}"
 
         return mensaje_completo
 
     def resumen(self, estudiante):
         """Crea un mensaje con las respuestas organizadas"""
         separador = "-" * 30
-        agradecimiento = f"Muchas gracias por llenar el formulario, {estudiante.nombre}.\nResumen:"
+        agradecimiento = f"Muchas gracias por llenar el formulario, {estudiante.nombre}.\n\nResumen:"
         respuestas_lista = []
         for llave, valor in self.respuestas.items():
             respuestas_lista.append(f" | {llave}: {valor}")
@@ -133,7 +147,7 @@ def mostrar_todos_los_resultados(lista1, lista2):
 
 
 def main():
-    for i in range(1, 2):
+    for i in range(1, 11):
         sujeto = Estudiante.crear_estudiante_input()
         encuesta = Encuesta(sujeto)
         encuesta.agregar_respuesta(sujeto)

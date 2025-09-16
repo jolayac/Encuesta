@@ -1,22 +1,61 @@
-Nombre, ¿estas motivado/interesado en realizar un proyecto?, ¿Cuál es tu idea de proyecto? y ¿tienes experiencia haciendo código -> cuál lenguaje de programación?
+Nombre, edad ¿estas motivado/interesado en realizar un proyecto?, ¿Cuál es tu idea de proyecto? y ¿tienes experiencia haciendo código -> ¿Cuál lenguaje de programación?
 
-Juan Camilo Páez Guaspud -- recolección y almacenamiento de datos de actividad en redes sociales -- Sí, mucho -- Java, Python y PSelnt
+Juan Camilo Páez Guaspud
+17
+Sí
+Recolección y almacenamiento de datos de actividad en redes sociales
+Java, Python y PSelnt
 
-Ferney Rodriguez -- Sí -- Juego de plataforma -- Python (poco)
+Ferney Rodriguez
+17
+Sí
+Juego de plataforma
+Python (poco)
 
-Kevin Possos -- Sí -- Aplicación gestionadora de negocios (inventario) -- Python 
- 
-Wilmer porto -- Sí -- Organizador de libros (género y alfabético) -- Python (poco)
+Kevin Possos
+20
+Sí
+Aplicación gestionadora de negocios (inventario)
+Python
 
-David Sotelo -- Sí -- Identificador de resistencias por foto -- Python, Java (poco)
+Wilmer porto
+20
+Sí
+Organizador de libros (género y alfabético)
+Python (poco)
 
-Miguel Ramos -- Sí -- Juego (en espera) -- Python
+David Sotelo
+20
+Sí
+Identificador de resistencias por foto
+Python, Java (poco)
 
-Santiago peralta -- No -- No idea -- Python 
+Miguel Ramos
+17
+Sí
+Juego (en espera)
+Python
 
-Jose Luis Ramirez -- Sí --  Foro sobre impresión 3D -- Python, Java, Dart, C++ 
+Santiago peralta
+17
+No
+No idea
+Python
 
-Sebastián Triana -- No -- Orgnizador de tareas -- Python
+Jose Luis Ramirez
+17
+Sí
+Foro sobre impresión 3D
+Python, Java, Dart, C++
 
-Sergio Alejandro Vazquez -- No -- Organizador de rutinas de gimnasio -- C++, Python (poco)
+Sebastián Triana
+21
+No
+Orgnizador de tareas
+Python
 
+Sergio Alejandro Vazquez
+17
+No
+Organizador de rutinas de gimnasio
+C++, Python (poco)
