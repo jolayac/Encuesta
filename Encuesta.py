@@ -16,13 +16,22 @@ lista_encuestas = []
 # Clases:
 
 class Estudiante:
+<<<<<<< Updated upstream
     def __init__(self, nombre, edad, respuesta_proyecto=None):
         self.nombre = nombre.capitalize()
         self.edad = edad
+=======
+    def __init__(self, nombre: str, edad: int, respuesta_proyecto=None):
+        if respuesta_proyecto is None:
+            respuesta_proyecto = {}
+        self.nombre = nombre.strip().title()
+        self.edad = int(edad)
+>>>>>>> Stashed changes
         self.respuesta_proyecto = respuesta_proyecto
 
     @staticmethod
     def crear_estudiante_input():
+<<<<<<< Updated upstream
         """Crea un nuevo estudiante (objeto). Pide un nombre y una edad en la terminal"""
 
         nombr = input("Ingrese su nombre.\n>").strip().title()
@@ -38,6 +47,16 @@ class Estudiante:
                 print("La edad debe ser un número entero coherente. Intente de nuevo")
         lista_estudiantes.append(nombr)
 
+=======
+        nombr = input("Ingrese su nombre.\n>")
+        while True:
+            eda_str = input("Ingrese su edad (número entero):\n> ").strip()
+            try:
+                eda = int(eda_str)
+                break
+            except ValueError:
+                print("La edad debe ser un número entero. Intente de nuevo.")
+>>>>>>> Stashed changes
         return Estudiante(nombr, eda)
 
 
