@@ -1,88 +1,145 @@
 # Juan Sebastián Olaya Castañeda
-# Juan Sebastián Corredor Saenz
-# Juan Camilo Páez Guaspud
 
-# Diseñar una encuesta para 6 users
-# Nombre
-# Interés en hacer un proyecto
-# Idea de proyecto
-# Experiencia con lenguajes
+"""
+Diseñar una encuesta para 10 usuarios, que organice y muestre los resultados.
+Datos que pide la encuesta:
+-Interés en hacer un proyecto.
+-Idea de proyecto.
+-Experiencia programando.
+"""
+# Variables:
 
-# clases
+lista_estudiantes = []
+lista_encuestas = []
+
+
+# Clases:
 
 class Estudiante:
-    def __init__(self, nombre, edad, respuesta_proyecto):
+    def __init__(self, nombre, edad, respuesta_proyecto=None):
         self.nombre = nombre
         self.edad = edad
-        self.respuesta_proyecto = mostrar_resultados()
-        
+        self.respuesta_proyecto = respuesta_proyecto
+
+    @staticmethod
+    def crear_estudiante_input():
+        """Crea un nuevo estudiante (objeto). Pide un nombre y una edad en la terminal"""
+
+        nombre = input("Ingrese su nombre.\n> ").strip().title()
+
+        while True:    # Se va a encargar de verificar que el input de edad sea válido como edad.
+            try:
+                edad = int(input("\nIngrese su edad.\n> "))
+                if 0 < edad < 120:
+                    break
+                else:
+                    print("\nPor favor, ingrese una edad válida.")
+            except ValueError:
+                print("\nLa edad debe ser un número entero coherente. Intente de nuevo")
+        lista_estudiantes.append(nombre)
+
+        return Estudiante(nombre, edad)
+
+
 class Encuesta:
-    def __init__(self, preguntas, respuestas):
-        self.preguntas = ["¿Está usted interesado en hacer un proyecto con ayuda de Python?", "¿Cuál es su idea de proyecto?","¿Tiene alguna experiencia programando con Python, Java o algún otro lenguaje de programación? De ser así, indique cuál"]
-        self.respuestas = {"Interés": interes, "Idea": idea, "Experiencia": experiencia}
+    def __init__(self, estudiante):
 
-    def agregar_respuesta():
-        interes = input(self.pregunta[0] + " ")
-        idea = input(self.preguntas[1] + " ")
-        experiencia = input(self.preguntas[2] + " ")
+        self. estudiante = estudiante
+        self.preguntas = [
+            "¿Está usted genuinamente interesado en hacer un proyecto con ayuda de Python? (Sí/No)",
+            "¿Cuál es su idea de proyecto?",
+            "¿Tiene alguna experiencia programando con Python, Java o algún otro lenguaje de programación?\nDe ser así, indique cuál. De lo contrario, escriba \"No\"."
+        ]
+        self.respuestas = {
+            "Interés": "",
+            "Idea": "",
+            "Experiencia": ""
+        }
+        self.resumen_respuestas = None
 
-    def mostrar_resultados():
-        pass
+    def agregar_respuesta(self, estudiante):
+        """
+        Hace la encuesta: pregunta por el interés, idea de proyecto y experiencia programando.
+        Después, guarda los resultados en la encuesta creada (objeto) y la guarda dentro del estudiante (respuesta_proyecto)
+        El return es un extra, por si llega a ser necesario.
+        """
+        # Para interés. Solo acepta si o no en sus diferentes formas.
+        print("\n")
+        while True:
+            interes = input(f"{self.preguntas[0]}\n> ").strip().lower()
+            if interes == "si":
+                interes = "Sí"
+            elif interes == "sí":
+                interes = "Sí"
+            elif interes == "no":
+                interes = "No"
+            else:
+                print("\nRespuesta inválida. Por favor, responda \"Sí\" o \"No\".\n> ")
 
-    def resumen():
-        pass
+            if interes == "Sí":
+                self.interesado = True
+                break
+            if interes == "No":
+                self.interesado = False
+                break
+
+        # Para idea.
+        idea = input(f"\n{self.preguntas[1]}\n>").strip().capitalize()
+
+        # Para experiencia.
+        experiencia = input(f"\n{self.preguntas[2]}\n>").strip().capitalize()
+
+        # Para agregarlo a respuestas.
+        self.respuestas["Interés"] = interes
+        self.respuestas["Idea"] = idea
+        self.respuestas["Experiencia"] = experiencia
+
+        # Para incluirlo en estudiante.
+        estudiante.respuesta_proyecto = self.respuestas
+        mensaje_completo = self.resumen(estudiante)
+        self.resumen_respuestas = mensaje_completo
+        lista_encuestas.append(self.respuesta_organizada())
+
+    def respuesta_organizada(self):
+        """Crea un mensaje con las respuestas organizadas"""
+        separador = "-" * 30
+        respuestas_lista = []
+        for llave, valor in self.respuestas.items():
+            respuestas_lista.append(f" | {llave}: {valor}")
+        respuestas = "\n".join(respuestas_lista)
+        mensaje_completo = f"{separador}\n{respuestas}\n{separador}\n"
+
+        return mensaje_completo
+
+    def resumen(self, estudiante):
+        """Crea un mensaje con las respuestas organizadas"""
+        separador = "-" * 30
+        agradecimiento = f"Muchas gracias por llenar el formulario, {estudiante.nombre}.\nResumen:"
+        respuestas_lista = []
+        for llave, valor in self.respuestas.items():
+            respuestas_lista.append(f" | {llave}: {valor}")
+        respuestas = "\n".join(respuestas_lista)
+        mensaje_completo = f"\n{separador}\n{agradecimiento}\n{respuestas}\n{separador}"
+
+        return mensaje_completo
 
 
-# Variables:
-Resultado = []
-Resultados = []
-
-
-User1 = {""}
-User2 = {""}
-User3 = {""}
-User4 = {""}
-User5 = {""}
-User6 = {""}
-
-# Funciones
-
-
-def encuesta():
-    Nombre = input("Ingrese su nombre: ")
-    Carrera = input("Ingrese su carrera: ")
-    Idea = input("Ingrese su idea de proyecto: ")
-    return {"Nombre": Nombre, "Carrera": Carrera, "Idea": Idea}
-
+def mostrar_todos_los_resultados(lista1, lista2):
+    print("Todos los resultados de las encuestas son los siguientes:")
+    for i in range(len(lista1)):
+        print(f"\n{lista1[i]}\n{lista2[i]}")
 
 # Programa principal
+
+
 def main():
-    for i in range(11):
-        if i <= 5:
-            Resultado = encuesta()
-            Resultados.append(Resultado)
-            print(f"User {i+1} {Resultado}")
-            if i == 0:
-                User1 = Resultado
-            elif i == 1:
-                User2 = Resultado
-            elif i == 2:
-                User3 = Resultado
-            elif i == 3:
-                User4 = Resultado
-            elif i == 4:
-                User5 = Resultado
-            elif i == 5:
-                User6 = Resultado
-        elif i == 6:
-            print("Gracias por participar en la encuesta")
-            print("Los resultados son:")
-            # Crea listas [i,resultado] más o menos así: [(1, 'A'), (2, 'B'), (3, 'C')]. (A, B y C siendo resultados).
-            for i, resultado in enumerate(Resultados, 1):
-                print(f"Usuario {i}:")
-                print(f"  Nombre: {resultado['Nombre']}")
-                print(f"  Carrera: {resultado['Carrera']}")
-                print(f"  Idea de proyecto: {resultado['Idea']}")
-                print("-" * 30)
-        else:
-            break
+    for i in range(1, 2):
+        sujeto = Estudiante.crear_estudiante_input()
+        encuesta = Encuesta(sujeto)
+        encuesta.agregar_respuesta(sujeto)
+        print(encuesta.resumen_respuestas)
+    print(f"\n{"=" * 30}\n")
+    mostrar_todos_los_resultados(lista_estudiantes, lista_encuestas)
+
+
+main()

@@ -5,8 +5,6 @@ Este programa permite recopilar información necesaria para nuestra clase a 6 us
 # Autores
 
 -Juan Sebastián Olaya Castañeda
--Juan Camilo Páez Guaspud
--Juan Sebastián Corredor Saenz (colaborador)
 
 # El programa se compone de las siguientes variables:
 
